@@ -1,0 +1,186 @@
+
+settings:
+  best_accy: 0
+  save_every: 50
+  start_epoch: 0
+  lowest_accy: 40
+
+  
+paths:
+  logs: results/logs/
+  tables: results/tables/
+  objects: results/objects/
+  checkpoints: 'checkpoints/'
+  experiments: 'results/experiments/'
+
+
+datasets:
+  mnist: '../datasets/MNIST/'
+  svhn: '../datasets/SVHN/'
+  cifar10: '../datasets/CIFAR10/'
+  cifar100: '../datasets/CIFAR100/'
+  ag_news: '../datasets/AgNews/'
+
+
+extensions:
+  logs: .txt
+  tables: .csv
+  results: .pkl
+  checkpoints: .pth
+  experiments: .pkl
+
+
+hyperparameters:
+
+  mnist:
+
+    fcnn:
+      batch_size: 128
+      total_epochs: 50
+      milestones: [30, 40]  
+      learning_rate: 0.1
+      lr_red_size: 10
+      momentum: .9
+      weight_decay: .0001
+      num_classes: 10
+
+  svhn:
+
+    fcnn:
+      batch_size: 128
+      total_epochs: 100
+      milestones: [50, 75]  
+      learning_rate: 0.1
+      lr_red_size: 10
+      momentum: .9
+      weight_decay: .0001
+      num_classes: 10
+
+    vgg:
+      batch_size: 128
+      total_epochs: 50
+      milestones: [30,35]  
+      learning_rate: 0.1
+      lr_red_size: 10
+      momentum: .9
+      weight_decay: .0001
+      num_classes: 10
+
+    resnet:
+      batch_size: 128
+      total_epochs: 50
+      milestones: [30,35]  
+      learning_rate: 0.1
+      lr_red_size: 10
+      momentum: .9
+      weight_decay: .0001
+      num_classes: 10
+
+  cifar10:
+
+    fcnn:
+      batch_size: 128
+      total_epochs: 400 
+      milestones: [250, 3250]  
+      learning_rate: 0.1
+      lr_red_size: 10
+      momentum: .9
+      weight_decay: .0001
+      num_classes: 10
+
+    resnet:
+      batch_size: 128
+      total_epochs: 250
+      milestones: [150,200]  
+      learning_rate: 0.1
+      lr_red_size: 10
+      momentum: .9
+      weight_decay: .0001
+      num_classes: 10
+
+    densenet:
+      batch_size: 64
+      total_epochs: 300
+      milestones: [150,225]  
+      learning_rate: 0.1
+      lr_red_size: 10
+      momentum: .9
+      weight_decay: .0001
+      num_classes: 10
+    
+    playground:
+      batch_size: 128
+      total_epochs: 250
+      milestones: [500,550]  
+      learning_rate: 0.001
+      lr_red_size: 10
+      momentum: .9
+      weight_decay: .0001
+      num_classes: 10
+    
+    wrn:
+      batch_size: 128
+      total_epochs: 200
+      milestones: [60,120,160]  
+      learning_rate: 0.1
+      lr_red_size: 5
+      momentum: .9
+      weight_decay: 0.0005
+      num_classes: 10
+
+  cifar100:
+    resnet:
+      batch_size: 128
+      total_epochs: 500
+      milestones: [250, 375]  
+      learning_rate: 0.1
+      lr_red_size: 10
+      momentum: .9
+      weight_decay: 0.0001
+      num_classes: 100
+
+    densenet:
+      batch_size: 512
+      total_epochs: 300
+      milestones: [150,225]  
+      learning_rate: 0.1
+      lr_red_size: 10
+      momentum: .9
+      weight_decay: .0001
+      num_classes: 100
+    
+    wrn:
+      batch_size: 128
+      total_epochs: 200
+      milestones: [60,120,160]  
+      learning_rate: 0.1
+      lr_red_size: 5
+      momentum: .9
+      weight_decay: 0.0005
+      num_classes: 100
+
+
+  
+  # 3.4 Of the Paper
+  imagenet:
+    
+    resnet:
+      batch_size: 256
+      total_epochs: 500
+      milestones: [250, 375]  
+      learning_rate: 0.1
+      lr_red_size: 10
+      momentum: .9
+      weight_decay: 0.0001
+      num_classes: 200 # verify
+
+  ag_news:
+    
+    vdcnn:
+      batch_size: 128
+      total_epochs: 100
+      milestones: [15,30,45,60,75]  # all those?
+      learning_rate: 0.01
+      lr_red_size: 2  
+      momentum: .9
+      weight_decay: .0001
